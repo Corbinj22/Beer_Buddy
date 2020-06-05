@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Login from '../Login/Login'
+import HeadImg from '../HeadImg/HeadImg'
 
 class App extends Component {
   constructor() {
@@ -18,16 +19,18 @@ class App extends Component {
     return (
       <div className = "App" >
         <Switch>
-          <Route path="/"
-          component={() =>
-            <Login />} />
-        </Switch>
-        <Switch>
-          <Route path="/Questionnaire"
-          component={() =>
-            <div className="questionnaire-view"
-              <HeadImg />
-            </div>
+            <Route
+              path="/questionnaire"
+              component={() => (
+                <div className="questionnaire-view">
+                  <HeadImg />
+                </div>
+              )}
+            />
+            <Route path="/"
+            component={() =>
+              <Login />}
+              />
         </Switch>
       </div>
     );

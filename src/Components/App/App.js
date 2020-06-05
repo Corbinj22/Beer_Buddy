@@ -18,7 +18,16 @@ class App extends Component {
     return (
       <div className = "App" >
         <Switch>
-          <Route path="/" component={() => <Login />} />
+          <Route path="/"
+          component={() =>
+            <Login />} />
+        </Switch>
+        <Switch>
+          <Route path="/Questionnaire"
+          component={() =>
+            <div className="questionnaire-view"
+              <HeadImg />
+            </div>
         </Switch>
       </div>
     );

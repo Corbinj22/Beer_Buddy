@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Login from '../Login/Login'
 import HeadImg from '../HeadImg/HeadImg'
+import Nav from '../Nav/Nav'
 
 class App extends Component {
   constructor() {
@@ -24,6 +25,7 @@ class App extends Component {
               component={() => (
                 <div className="questionnaire-view">
                   <HeadImg />
+                  <Nav />
                 </div>
               )}
             />

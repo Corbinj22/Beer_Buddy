@@ -12,7 +12,7 @@ const Login = () => {
         <p className='app-tagline login-txt'>The best application for beer and food pairing.</p>
         <p className='app-tagline-cont login-txt'>Period.</p>
         <p className='login-txt login-age-check'>Over 21+</p>
-        <Link to ='/Questionnaire'>
+        <Link to ='/questionnaire'>
           <button className='login-txt login-btn yes-btn'>Yes</button>
         </Link>
         <button className='login-txt login-btn no-btn' onClick={() =>  addAlertClass(null)}>No</button>

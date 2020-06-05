@@ -4,6 +4,7 @@ import './App.css';
 import Login from '../Login/Login'
 import HeadImg from '../HeadImg/HeadImg'
 import Nav from '../Nav/Nav'
+import { fetchedBeers } from'../../apiRequest'
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,13 @@ class App extends Component {
         filteredBeers: [],
         selectedBeer: {}
       }
+    }
+
+  componentDidMount = async () => {
+    const beers = await fetchedBeers()
+    await this.setState({
+      fetchedBeers: beers
+    })
   }
 
   render() {

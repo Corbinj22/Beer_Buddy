@@ -1,0 +1,72 @@
+.login-container {
+  height: 100vh;
+  width: 100%;
+  background-image: url('/assets/BeerWall.jpeg');
+  display: flex;
+}
+
+.login-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background-color: rgb(0,0,0,.45);
+  width: 60%;
+  height: 50%;
+  flex-direction: column;
+}
+
+.login-txt {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding-bottom: .2em;
+  color: white;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+.age-alert {
+  background-color: white;
+  color: black;
+  height: 40%;
+  left: 35%;
+  padding-top: 50px;
+  position: absolute;
+  top: 40%;
+  width: 30%;
+}
+
+.hide {
+  display: none;
+}
+
+.login-header {
+  font-size: 3em;
+  font-weight: 800;
+  padding-bottom: .3em;
+}
+
+.app-tagline {
+
+}
+
+.app-tagline-cont {
+
+}
+
+.login-age-check {
+  margin-top: 1.3em;
+  font-weight: 800;
+}
+
+.yes-btn {
+  background-color: green;
+}
+
+.no-btn {
+  background-color: red;
+}
+
+.login-btn {
+  padding: .3em;
+  margin: .3em;
+}

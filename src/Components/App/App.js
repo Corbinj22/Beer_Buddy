@@ -45,6 +45,12 @@ class App extends Component {
     })
   }
 
+  resetMatchedBeer = () => {
+    this.setState({
+     matchedBeer : {}
+   })
+  }
+
   render() {
     return (
       <div className = "App" >
@@ -53,7 +59,7 @@ class App extends Component {
               path="/beer/:matchedBeer"
               component={() => (
                 <div className="questionnaire-view">
-                  <Nav />
+                  <Nav resetMatchedBeer={this.resetMatchedBeer}/>
                   <ExpandedBeerCard matchedBeer={this.state.matchedBeer}/>
                 </div>
               )}
@@ -63,7 +69,7 @@ class App extends Component {
               component={() => (
                 <div className="questionnaire-view">
                   <HeadImg />
-                  <Nav />
+                  <Nav resetMatchedBeer={this.resetMatchedBeer}/>
                   <Questionnaire allBeers={this.state.allBeers} setMatchedBeer={this.setMatchedBeer} matchedBeer={this.state.matchedBeer}/>
                 </div>
               )}

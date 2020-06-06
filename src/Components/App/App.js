@@ -5,6 +5,7 @@ import Login from '../Login/Login'
 import HeadImg from '../HeadImg/HeadImg'
 import Nav from '../Nav/Nav'
 import Questionnaire from '../Questionnaire/Questionnaire'
+import ExpandedBeerCard from '../ExpandedBeerCard/ExpandedBeerCard'
 import { fetchedBeers } from'../../apiRequest'
 
 class App extends Component {
@@ -39,7 +40,6 @@ class App extends Component {
   }
 
   setMatchedBeer = (matchedBeer) => {
-    console.log(2);
      this.setState({
       matchedBeer : matchedBeer
     })
@@ -50,12 +50,21 @@ class App extends Component {
       <div className = "App" >
         <Switch>
             <Route
+              path="/beer/:matchedBeer"
+              component={() => (
+                <div className="questionnaire-view">
+                  <Nav />
+                  <ExpandedBeerCard />
+                </div>
+              )}
+            />
+            <Route
               path="/questionnaire"
               component={() => (
                 <div className="questionnaire-view">
                   <HeadImg />
                   <Nav />
-                  <Questionnaire allBeers={this.state.allBeers} setMatchedBeer={this.setMatchedBeer}/>
+                  <Questionnaire allBeers={this.state.allBeers} setMatchedBeer={this.setMatchedBeer} matchedBeer={this.state.matchedBeer}/>
                 </div>
               )}
             />

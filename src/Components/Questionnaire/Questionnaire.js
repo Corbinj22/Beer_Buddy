@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Questionnaire.css'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Questionnaire extends Component {
   constructor(props) {
@@ -40,11 +40,14 @@ class Questionnaire extends Component {
 
   setStateBeer = (event) => {
     event.preventDefault()
-    console.log(1);
     this.props.setMatchedBeer(this.state.foundBeer)
   }
 
   render() {
+    if (this.props.matchedBeer.hasOwnProperty('name')) {
+      return <Redirect to={`/beer/${this.props.matchedBeer.name}`}/>
+    }
+
     return (
       <section className='question-container'>
       <p className='question-text-head'>Tell Us A Little About your Meal</p>
@@ -61,7 +64,7 @@ class Questionnaire extends Component {
         <p className='question-text'>What Meal Did You Choose?</p>
         <div className='meal-question'>
           <select onChange={this.setFoundBeer}>
-            <option value=''/>
+            <option value={null}>Please Select A Meal</option>
             {this.getMeals()}
           </select>
         </div>
@@ -74,11 +77,7 @@ class Questionnaire extends Component {
           <input onChange={this.setFavBeer} type="radio" id="lager" name="beerType" value="lager"/>
             <label className='spacing-answer'>Lager</label>
         </div>
-        <Link to='/beer/:id'>
-        <div onClick={() => this.setStateBeer}>
-          <button type='click' className='fetch-beer-button'>Fetch Beer</button>
-        </div>
-        </Link>
+          <button onClick={this.setStateBeer} type='click' className='fetch-beer-button'>Fetch Beer</button>
       </form>
       </section>
     )

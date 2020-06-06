@@ -54,7 +54,7 @@ class App extends Component {
               component={() => (
                 <div className="questionnaire-view">
                   <Nav />
-                  <ExpandedBeerCard />
+                  <ExpandedBeerCard matchedBeer={this.state.matchedBeer}/>
                 </div>
               )}
             />

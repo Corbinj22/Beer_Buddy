@@ -1,0 +1,58 @@
+.question-container {
+  width:100%;
+  height: 66vh;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(/assets/Barrel.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.question-text-head {
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+.question-text {
+  margin-top: 1.5em;
+}
+
+.customer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.time-question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2935C;
+  height:3em;
+  width:24.5em;
+}
+
+.spacing-answer {
+  margin-right: 2em;
+}
+
+.meal-question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2935C;
+  height:3em;
+  width:24.5em;
+}
+
+.fav-beer-question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2935C;
+  height:3em;
+  width:24.5em;
+}

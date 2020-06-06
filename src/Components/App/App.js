@@ -36,7 +36,11 @@ class App extends Component {
     this.setState({
       allBeers: spoofedBeers
     })
-    console.log(this.state.allBeers);
+  }
+
+  findMatchedBeer = (meal) => {
+    let matchedBeer = this.state.allBeers.find(beer => beer.food_pairing.includes(meal))
+    console.log(matchedBeer);
   }
 
   render() {
@@ -49,7 +53,7 @@ class App extends Component {
                 <div className="questionnaire-view">
                   <HeadImg />
                   <Nav />
-                  <Questionnaire allBeers={this.state.allBeers}/>
+                  <Questionnaire allBeers={this.state.allBeers} findMatchedBeer={this.findMatchedBeer}/>
                 </div>
               )}
             />

@@ -4,6 +4,7 @@ import './App.css';
 import Login from '../Login/Login'
 import HeadImg from '../HeadImg/HeadImg'
 import Nav from '../Nav/Nav'
+import Questionnaire from '../Questionnaire/Questionnaire'
 import { fetchedBeers } from'../../apiRequest'
 
 class App extends Component {
@@ -20,8 +21,22 @@ class App extends Component {
   componentDidMount = async () => {
     const beers = await fetchedBeers()
     await this.setState({
-      fetchedBeers: beers
+      fetchedBeers: beers,
+      allBeers: beers
     })
+    await this.spoofAverage()
+  }
+
+  spoofAverage = () => {
+     let spoofedBeers = this.state.fetchedBeers.map(beer => {
+      const randomNum = Number((Math.random() * 5).toFixed(2))
+      beer = {...beer, average : randomNum}
+      return beer
+    })
+    this.setState({
+      allBeers: spoofedBeers
+    })
+    console.log(this.state.allBeers);
   }
 
   render() {
@@ -34,6 +49,7 @@ class App extends Component {
                 <div className="questionnaire-view">
                   <HeadImg />
                   <Nav />
+                  <Questionnaire allBeers={this.state.allBeers}/>
                 </div>
               )}
             />

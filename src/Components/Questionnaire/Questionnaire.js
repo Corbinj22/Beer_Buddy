@@ -3,18 +3,46 @@ import './Questionnaire.css'
 import { Link } from 'react-router-dom';
 
 class Questionnaire extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       selectedTime : '',
-      foundBeer: '',
+      foundBeer: {},
       favBeer: ''
     }
-
-  const test = () => {
-    console.log(1);
-  }
 }
+
+  getMeals = () => {
+    const foodOptions = this.props.allBeers.map(beer => {
+      return <option key={beer.name} value={beer.food_pairing[0]}>{beer.food_pairing[0]}</option>
+    })
+    return foodOptions;
+  }
+
+  setTime = (event) => {
+    this.setState({
+      selectedTime: event.target.value
+    })
+  }
+
+  setFavBeer = (event) => {
+    this.setState({
+      favBeer: event.target.value
+    })
+  }
+
+  setFoundBeer = (event) => {
+    let matchedBeer = this.props.allBeers.find(beer => beer.food_pairing.includes(event.target.value))
+    this.setState({
+      foundBeer: matchedBeer
+    })
+  }
+
+  setStateBeer = (event) => {
+    event.preventDefault()
+    console.log(1);
+    this.props.setMatchedBeer(this.state.foundBeer)
+  }
 
   render() {
     return (
@@ -23,29 +51,34 @@ class Questionnaire extends Component {
       <form className='customer-form'>
         <p className='question-text'>Time of Day</p>
         <div className='time-question'>
-          <input type="radio" id="morning" name="time" value="morning"/>
-          <label className='spacing-answer' for="morning">Morning</label>
-          <input type="radio" id="afternoon" name="time" value="afternoon"/>
-          <label className='spacing-answer' for="afternoon">Afternoon</label>
-          <input type="radio" id="night" name="time" value="night"/>
-          <label className='spacing-answer' for="night">Night</label>
+          <input onChange={this.setTime} type="radio" id="morning" name="time" value="morning"/>
+            <label className='spacing-answer'>Morning</label>
+          <input onChange={this.setTime} type="radio" id="afternoon" name="time" value="afternoon"/>
+            <label className='spacing-answer'>Afternoon</label>
+          <input onChange={this.setTime} type="radio" id="night" name="time" value="night"/>
+            <label className='spacing-answer'>Night</label>
         </div>
         <p className='question-text'>What Meal Did You Choose?</p>
         <div className='meal-question'>
-          <select value={this.state.selectedMeal} onChange={this.test}>
-               <option value="grapefruit">Grapefruit</option>
+          <select onChange={this.setFoundBeer}>
+            <option value=''/>
+            {this.getMeals()}
           </select>
         </div>
         <p className='question-text'>What's Your Typicaly Beer Type?</p>
         <div className='fav-beer-question'>
-          <input type="radio" id="ale" name="beerType" value="ale"/>
-          <label for="ale" className='spacing-answer'>Ale</label>
-          <input type="radio" id="stout" name="beerType" value="stout"/>
-          <label for="stout" className='spacing-answer'>Stout</label>
-          <input type="radio" id="lager" name="beerType" value="lager"/>
-          <label for="lager" className='spacing-answer'>Lager</label>
+          <input onChange={this.setFavBeer} type="radio" id="ale" name="beerType" value="ale"/>
+            <label  className='spacing-answer'>Ale</label>
+          <input onChange={this.setFavBeer} type="radio" id="stout" name="beerType" value="stout"/>
+            <label  className='spacing-answer'>Stout</label>
+          <input onChange={this.setFavBeer} type="radio" id="lager" name="beerType" value="lager"/>
+            <label className='spacing-answer'>Lager</label>
         </div>
-        <button type='click' className='fetch-beer-button'>Fetch Beer</button>
+        <Link to='/beer/:id'>
+        <div onClick={() => this.setStateBeer}>
+          <button type='click' className='fetch-beer-button'>Fetch Beer</button>
+        </div>
+        </Link>
       </form>
       </section>
     )

@@ -14,7 +14,7 @@ class App extends Component {
         fetchedBeers: [],
         allBeers: [],
         filteredBeers: [],
-        selectedBeer: {}
+        matchedBeer: {}
       }
     }
 
@@ -36,7 +36,13 @@ class App extends Component {
     this.setState({
       allBeers: spoofedBeers
     })
-    console.log(this.state.allBeers);
+  }
+
+  setMatchedBeer = (matchedBeer) => {
+    console.log(2);
+     this.setState({
+      matchedBeer : matchedBeer
+    })
   }
 
   render() {
@@ -49,7 +55,7 @@ class App extends Component {
                 <div className="questionnaire-view">
                   <HeadImg />
                   <Nav />
-                  <Questionnaire allBeers={this.state.allBeers}/>
+                  <Questionnaire allBeers={this.state.allBeers} setMatchedBeer={this.setMatchedBeer}/>
                 </div>
               )}
             />

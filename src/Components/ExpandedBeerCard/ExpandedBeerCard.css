@@ -1,26 +1,28 @@
 .expandedBeer-container {
-  height:88vh;
+  height:87vh;
   width:100%;
-  background-color: #d3d3d3;
+  background-color: #f2A35e;
 }
 
 .top-card-container {
   width: 80%;
-  height:50%;
+  height:67%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   margin: 1em 1em;
 }
 
 .name-an-pic {
-  width:45%;
+  width:30%;
   text-align: center;
+  background-color: white;
 }
 
 .beer-img {
   width: 100%;
-  height:90%;
+  height:85%;
   object-fit: contain;
+  background-color: white;
 }
 
 .all-details {
@@ -28,7 +30,8 @@
   width:30%;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: #010626;
+  color:white;
 }
 
 .details-container {
@@ -40,9 +43,22 @@
   margin-top: 1.5em;
 }
 
+.card-text {
+  font-size: 1.1em;
+  padding: .5em;
+}
+
 .bottom-card-container {
   background: white;
-  height:40%;
+  height:25%;
   width:80%;
   margin: auto;
+}
+
+.description-rule {
+  font-size: 2.3em;
+}
+
+.beer-detail {
+  font-size: 1.5em;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Questionnaire.css'
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class Questionnaire extends Component {
   constructor(props) {

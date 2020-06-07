@@ -2,6 +2,7 @@ import React from 'react';
 import './ExpandedBeerCard.css'
 const ExpandedBeerCard = ({ matchedBeer, setNewAverage }) => {
   let average = matchedBeer.average;
+  let fixedNum = average.toFixed(2)
 
   const makeNewAverage = (event) => {
     average = (average + Number(event.target.value)) / 2
@@ -9,7 +10,7 @@ const ExpandedBeerCard = ({ matchedBeer, setNewAverage }) => {
 
   const submitAverage = (event) => {
     event.preventDefault()
-    setNewAverage(average)
+    setNewAverage(fixedNum)
   }
 
   return (
@@ -17,7 +18,7 @@ const ExpandedBeerCard = ({ matchedBeer, setNewAverage }) => {
       <div className='top-card-container'>
         <div className='name-an-pic'>
           <h2>{matchedBeer.name}</h2>
-          <img className='beer-img' src={matchedBeer.image_url}/>
+          <img className='beer-img'alt={matchedBeer.namne} src={matchedBeer.image_url}/>
         </div>
         <div className='all-details'>
           <h2>Profile</h2>

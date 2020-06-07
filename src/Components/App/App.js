@@ -6,6 +6,7 @@ import HeadImg from '../HeadImg/HeadImg'
 import Nav from '../Nav/Nav'
 import Questionnaire from '../Questionnaire/Questionnaire'
 import ExpandedBeerCard from '../ExpandedBeerCard/ExpandedBeerCard'
+import UserFilteredBeerDisplay from '../UserFilteredBeerDisplay/UserFilteredBeerDisplay'
 import { fetchedBeers } from'../../apiRequest'
 
 class App extends Component {
@@ -30,8 +31,9 @@ class App extends Component {
 
   spoofAverage = () => {
      let spoofedBeers = this.state.fetchedBeers.map(beer => {
-      const randomNum = Number((Math.random() * 5).toFixed(2)) + 4
-      beer = {...beer, average : randomNum}
+      const randomNum = Number((Math.random() * 5)) + 4
+      const setNum = Number(randomNum.toFixed(2))
+      beer = {...beer, average : setNum}
       return beer
     })
     this.setState({
@@ -67,6 +69,15 @@ class App extends Component {
                 <div className="questionnaire-view">
                   <Nav resetMatchedBeer={this.resetMatchedBeer}/>
                   <ExpandedBeerCard matchedBeer={this.state.matchedBeer} setNewAverage={this.setNewAverage}/>
+                </div>
+              )}
+            />
+            <Route
+              path="/allbeers"
+              component={() => (
+                <div className="questionnaire-view">
+                  <Nav resetMatchedBeer={this.resetMatchedBeer}/>
+                  <UserFilteredBeerDisplay allBeers={this.state.allBeers} setMatchedBeer={this.setMatchedBeer}/>
                 </div>
               )}
             />

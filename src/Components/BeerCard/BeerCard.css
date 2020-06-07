@@ -1,0 +1,16 @@
+.beer-card {
+  width: 25%;
+  height:35%;
+  background-color: #010626;
+  text-align: center;
+  margin: 1em;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.click-style {
+  padding-top: .5em;
+  background-color: #F2935C;
+  font-weight: 600;
+}

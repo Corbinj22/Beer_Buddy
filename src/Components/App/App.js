@@ -30,7 +30,7 @@ class App extends Component {
 
   spoofAverage = () => {
      let spoofedBeers = this.state.fetchedBeers.map(beer => {
-      const randomNum = Number((Math.random() * 5).toFixed(2))
+      const randomNum = Number((Math.random() * 5).toFixed(2)) + 4
       beer = {...beer, average : randomNum}
       return beer
     })
@@ -43,6 +43,12 @@ class App extends Component {
      this.setState({
       matchedBeer : matchedBeer
     })
+  }
+
+  setNewAverage = (newAverage) => {
+    this.setState(prevState => ({
+      matchedBeer: {...prevState.matchedBeer, average: newAverage}
+    }))
   }
 
   resetMatchedBeer = () => {
@@ -60,7 +66,7 @@ class App extends Component {
               component={() => (
                 <div className="questionnaire-view">
                   <Nav resetMatchedBeer={this.resetMatchedBeer}/>
-                  <ExpandedBeerCard matchedBeer={this.state.matchedBeer}/>
+                  <ExpandedBeerCard matchedBeer={this.state.matchedBeer} setNewAverage={this.setNewAverage}/>
                 </div>
               )}
             />

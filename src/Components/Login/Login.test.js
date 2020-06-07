@@ -14,15 +14,16 @@ it('renders without crashing', () => {
 
 describe('<Login />', () => {
   it('should show an error message if under 21', () => {
-    const { debug ,getByPlaceholderText, getByText } = render(<BrowserRouter> <Login /> </BrowserRouter>);
+    const { getByPlaceholderText, getByText } = render(<BrowserRouter> <Login /> </BrowserRouter>);
     const noBtn = getByText('No')
     userEvent.click(noBtn)
     expect(getByText('Come back and see us when you\'re 21!')).toBeInTheDocument()
   })
 
   it('should allow user to login if over 21', () => {
+    const history = createMemoryHistory()
+
     const { debug ,getByPlaceholderText, getByText } = render(<BrowserRouter> <Login /> </BrowserRouter>);
     const yesBtn = getByText('Yes')
-    userEvent.click(yesBtn)
   })
 })

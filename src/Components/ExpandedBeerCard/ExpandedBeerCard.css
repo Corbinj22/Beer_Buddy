@@ -32,6 +32,7 @@
   align-items: center;
   background-color: #010626;
   color:white;
+  overflow:scroll;
 }
 
 .details-container {
@@ -53,6 +54,7 @@
   height:25%;
   width:80%;
   margin: auto;
+  overflow: scroll;
 }
 
 .description-rule {

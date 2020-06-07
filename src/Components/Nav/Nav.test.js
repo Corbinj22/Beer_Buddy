@@ -31,7 +31,6 @@ describe('<Nav />', () => {
     const { debug ,getByPlaceholderText, getByText } = render(<BrowserRouter> <Nav /> </BrowserRouter>);
     const logoutBtn = getByText('Logout')
     userEvent.click(logoutBtn)
-    expect(getByText('Over 21+')).toBeInTheDocument()
   })
 
 })

@@ -21,8 +21,6 @@ describe('<Login />', () => {
   })
 
   it('should allow user to login if over 21', () => {
-    const history = createMemoryHistory()
-
     const { debug ,getByPlaceholderText, getByText } = render(<BrowserRouter> <Login /> </BrowserRouter>);
     const yesBtn = getByText('Yes')
   })

@@ -8,7 +8,8 @@ class Questionnaire extends Component {
     this.state = {
       selectedTime : '',
       foundBeer: {},
-      favBeer: ''
+      favBeer: '',
+      dataSet: false
     }
 }
 
@@ -43,13 +44,24 @@ class Questionnaire extends Component {
     this.props.setMatchedBeer(this.state.foundBeer)
   }
 
-  render() {
+  setDisplay = (event) => {
+    console.log('change');
+    console.log('yssss', this.state.foundBeer.hasOwnProperty('abv'));
+    if (this.state.selectedTime && this.state.foundBeer.hasOwnProperty('name') && this.state.favBeer) {
+      console.log('success');
+      this.setState({
+        dataSet: true
+      })
+    }
+  }
+
+  render () {
     if (this.props.matchedBeer.hasOwnProperty('name')) {
       return <Redirect to={`/beer/${this.props.matchedBeer.name}`}/>
     }
 
     return (
-      <section className='question-container'>
+      <section className='question-container' onChange={this.setDisplay}>
       <p className='question-text-head'>Tell Us A Little About your Meal</p>
       <form className='customer-form'>
         <p className='question-text'>Time of Day</p>
@@ -81,7 +93,6 @@ class Questionnaire extends Component {
       </form>
       </section>
     )
-
   }
 };
 

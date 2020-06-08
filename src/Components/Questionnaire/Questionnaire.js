@@ -93,7 +93,6 @@ class Questionnaire extends Component {
       </form>
       </section>
     )
-
   }
 };
 

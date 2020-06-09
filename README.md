@@ -1,6 +1,6 @@
-Beer Buddy
 
 **About App**
+<br>
 Beer Buddy is an application created for a fictionary brewery located in a multi-buissness building. 
 Beer Buddy allows users to select their meal ordered from one of the fictional restaurants and Beer Buddy seamlessly matches a beer specifically for the users meal.
 Users can see the recommended beer ABV, IBU, tagline, and the average user rating. 

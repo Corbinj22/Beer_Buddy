@@ -14,7 +14,8 @@ class Questionnaire extends Component {
 }
 
   // componentDidMount() {
-  //   if (!!this.state.selectedTime && !!this.state.favBeer) {
+  //   console.log('before');
+  //   if (this.state.selectedTime && this.state.favBeer) {
   //     console.log('works');
   //     this.setState({
   //       dataSet : false

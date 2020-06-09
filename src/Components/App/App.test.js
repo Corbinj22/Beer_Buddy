@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router }  from 'react-router';
-import { createBrowserHistory } from 'history';
-import { render, fireEvent, waitForElement, cleanup } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
+import { render, fireEvent, waitFor, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { BrowserRouter } from 'react-router-dom';
 import { fetchedBeers } from '../../apiRequest'
@@ -55,7 +55,7 @@ describe('<App />', () => {
   it('should render to the Dom', async () => {
     fetchedBeers.mockResolvedValueOnce(fakeData)
     // const mockrender = render(<Router> <App /> </Router>)
-    const history = createBrowserHistory()
+    const history = createMemoryHistory()
     const mockrender = render(<Router history={history}> <App /> </Router>)
     const { getByText, getByPlaceholderText } = mockrender
     const title = getByText('Beer Buddy')
@@ -66,7 +66,7 @@ describe('<App />', () => {
     jest.resetAllMocks()
     fetchedBeers.mockResolvedValueOnce(fakeData)
     // const mockrender = render(<Router> <App /> </Router>)
-    const history = createBrowserHistory()
+    const history = createMemoryHistory()
     const mockrender = render(<Router history={history}> <App /> </Router>)
     const { getByText, getByPlaceholderText } = mockrender
     const title = getByText('Beer Buddy')
@@ -78,30 +78,30 @@ describe('<App />', () => {
   })
 
   it('should be able to match a beer', async () => {
+
     jest.resetAllMocks()
     fetchedBeers.mockResolvedValueOnce(fakeData)
-    const history = createBrowserHistory()
+    const history = createMemoryHistory()
     const mockrender = render(<Router history={history}> <App /> </Router>)
-    const {getByText, getByPlaceholderText, debug} = mockrender
+    const {getByText, getByPlaceholderText, getByLabelText, debug, getByTestId} = mockrender
 
-    const title = getByText('Beer Buddy')
-    expect(title).toBeInTheDocument()
     const loginBtn = getByText('Yes')
-
     fireEvent.click(loginBtn);
     expect(getByText('Tell Us A Little About your Meal')).toBeInTheDocument()
 
     const mealSelection = getByText('Please Select A Meal')
-    fireEvent.change(mealSelection, {target: {value: 'Spicy chicken tikka masala'}})
-
+    const morningSelection = getByText('Morning')
+    const beerSelection = getByLabelText('Ale')
     const fetchButton = getByText('Fetch Beer')
-    fireEvent.click(fetchButton)
 
-    const abvNum = getByText('ABV: 4.5')
-    expect(abvNum).toBeInTheDocument()
+    fireEvent.click(beerSelection)
+    fireEvent.click(morningSelection)
+
+    getByTestId('select-meal').value = 'Spicy chicken tikka masala'
+    fireEvent.change(getByTestId('select-meal'), {target: {value: 'Spicy chicken tikka masala'}})
+    // fireEvent.click(fetchButton)
+    // await waitFor(() => {
+    // })
   })
-
-
-
 
 })

@@ -9,9 +9,18 @@ class Questionnaire extends Component {
       selectedTime : '',
       foundBeer: {},
       favBeer: '',
-      dataSet: false
+      dataSet: true
     }
 }
+
+  // componentDidMount() {
+  //   if (!!this.state.selectedTime && !!this.state.favBeer) {
+  //     console.log('works');
+  //     this.setState({
+  //       dataSet : false
+  //     })
+  //   }
+  // }
 
   getMeals = () => {
     const foodOptions = this.props.allBeers.map(beer => {
@@ -44,13 +53,10 @@ class Questionnaire extends Component {
     this.props.setMatchedBeer(this.state.foundBeer)
   }
 
-  setDisplay = (event) => {
-    console.log('change');
-    console.log('yssss', this.state.foundBeer.hasOwnProperty('abv'));
-    if (this.state.selectedTime && this.state.foundBeer.hasOwnProperty('name') && this.state.favBeer) {
-      console.log('success');
+  setDisplay = () => {
+    if (this.state.selectedTime && this.state.favBeer) {
       this.setState({
-        dataSet: true
+        dataSet: false
       })
     }
   }

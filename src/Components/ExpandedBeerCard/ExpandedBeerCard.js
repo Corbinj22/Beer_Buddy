@@ -2,9 +2,6 @@ import React from 'react';
 import './ExpandedBeerCard.css'
 const ExpandedBeerCard = ({ matchedBeer, setNewAverage }) => {
   let average = Number(matchedBeer.average.toFixed(2));
-  console.log(typeof average);
-  // let fixedNum = Number(average.toFixed(2))
-
 
   const makeNewAverage = (event) => {
     average = Number(((average + Number(event.target.value)) / 2).toFixed(2))

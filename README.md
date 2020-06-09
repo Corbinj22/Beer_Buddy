@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Beer Buddy
 
-## Available Scripts
+**About App**
+Beer Buddy is an application created for a fictionary brewery located in a multi-buissness building. 
+Beer Buddy allows users to select their meal ordered from one of the fictional restaurants and Beer Buddy seamlessly matches a beer specifically for the users meal.
+Users can see the recommended beer ABV, IBU, tagline, and the average user rating. 
 
-In the project directory, you can run:
+## Team Members:
 
-### `npm start`
+Justin Corbin - [GitHub](https://github.com/Corbinj22)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Abstract
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Technologies Used:**
+*React*, *React Router*, *ES6*, *TDD*, *CSS*, *Fetch API for receiving 3rd party data*
 
-### `npm test`
+**Project Specs**
+Beer Buddy is a final assessment project completed at [Turing School of Softwar and Design](http://turing.io). This project was a the final project of Turings 3 of 4 inning program. This project gives an opporunity for Turing students to showcase their knowledge of using React, React Router, and React-Testing-Library. Students were tasked with taking a publicy available API and create an application for a specific audience. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup
+1. clone down this repo to desired location
+2. `cd` into the new directory
+3. run `npm install`
+4. run `npm start`
+5. Open localhost:3000 in your favorite browser (unless your terminal says otherwise)
 
-### `npm run build`
+## App Screenshots
+### Login Page
+[![Screen-Shot-2020-06-08-at-9-11-18-PM.png](https://i.postimg.cc/hPhdp6YX/Screen-Shot-2020-06-08-at-9-11-18-PM.png)](https://postimg.cc/8jQcCKNG)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Questionnaire Page
+[![Screen-Shot-2020-06-08-at-9-11-28-PM.png](https://i.postimg.cc/0Q2QrJRz/Screen-Shot-2020-06-08-at-9-11-28-PM.png)](https://postimg.cc/2qMmKy5Y)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Matched Beer Page
+[![Screen-Shot-2020-06-08-at-9-11-51-PM.png](https://i.postimg.cc/tJn9V3r4/Screen-Shot-2020-06-08-at-9-11-51-PM.png)](https://postimg.cc/vxyJJVFJ)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### All Beers Page
+[![Screen-Shot-2020-06-08-at-9-11-57-PM.png](https://i.postimg.cc/vZtxBygS/Screen-Shot-2020-06-08-at-9-11-57-PM.png)](https://postimg.cc/dhDVHz98)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**GIF**
+[![2020-06-08-21-13-29.gif](https://i.postimg.cc/8CFGYBSB/2020-06-08-21-13-29.gif)](https://postimg.cc/PLk0pDNP)

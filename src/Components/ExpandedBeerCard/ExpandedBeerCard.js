@@ -29,7 +29,7 @@ const ExpandedBeerCard = ({ matchedBeer, setNewAverage }) => {
             <p className='beer-detail'>Average Raiting: {matchedBeer.average} stars</p>
             <p className='beer-detail'>Please Leave A Raiting:</p>
             <form>
-              <button onClick={submitAverage} type="click">Submit</button>
+              <button className='user-rate-btn' onClick={submitAverage} type="click">Submit</button>
               <select onChange={makeNewAverage} className='user-raiting-select'>
                 <option value={null}>Star Raiting</option>
                 <option value={1}>1</option>

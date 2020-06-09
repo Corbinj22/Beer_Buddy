@@ -45,25 +45,51 @@
   padding-bottom: .3em;
 }
 
-.app-tagline {
-
-}
-
-.app-tagline-cont {
-
-}
-
 .login-age-check {
   margin-top: 1.3em;
   font-weight: 800;
 }
 
 .yes-btn {
-  background-color: green;
+color: white !important;
+text-transform: uppercase;
+text-decoration: none;
+background: green;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+}
+
+.yes-btn:hover {
+background: green;
+letter-spacing: 3px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
 }
 
 .no-btn {
-  background-color: red;
+color: white !important;
+text-transform: uppercase;
+text-decoration: none;
+background: red;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+}
+
+.no-btn:hover {
+background: red;
+letter-spacing: 3px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
 }
 
 .login-btn {

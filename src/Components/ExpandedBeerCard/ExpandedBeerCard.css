@@ -61,6 +61,19 @@
   font-size: 2.3em;
 }
 
+.user-rate-btn {
+color: white !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #f2A35e;
+padding: 5px;
+margin-right: .5em;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+}
+
 .beer-detail {
   font-size: 1.5em;
 }

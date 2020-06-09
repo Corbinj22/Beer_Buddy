@@ -15,7 +15,7 @@ class Questionnaire extends Component {
 
   getMeals = () => {
     const foodOptions = this.props.allBeers.map(beer => {
-      return <option key={beer.name} value={beer.food_pairing[0]}>{beer.food_pairing[0]}</option>
+      return <option data-testid={beer.food_pairing[0]} key={beer.name} value={beer.food_pairing[0]}>{beer.food_pairing[0]}</option>
     })
     return foodOptions;
   }
@@ -86,7 +86,7 @@ class Questionnaire extends Component {
             {this.getMeals()}
           </select>
         </div>
-          <button onClick={this.setStateBeer} type='click' className='fetch-beer-button'>Fetch Beer</button>
+          <button onClick={this.setStateBeer} disabled={this.state.dataSet} type='click' className='fetch-beer-button'>Fetch Beer</button>
       </form>
       </section>
     )

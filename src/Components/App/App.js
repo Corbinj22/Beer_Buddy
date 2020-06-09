@@ -47,17 +47,17 @@ class App extends Component {
     })
   }
 
-  setNewAverage = (newAverage) => {
-     this.setState( prevState => ({
+  setNewAverage = async (newAverage) => {
+     await this.setState( prevState => ({
       matchedBeer: {...prevState.matchedBeer, average: newAverage}
     }))
-    let index = this.state.allBeers.indexOf(this.state.matchedBeer);
+    let beers = this.state.allBeers.map(beer => beer.name)
+    let index = beers.indexOf(this.state.matchedBeer.name)
     let array = this.state.allBeers;
+
     array[index] = this.state.matchedBeer
-    console.log(index);
-    console.log(array[index]);
-    console.log(array);
-     this.setState({
+
+    await this.setState({
       allBeers: array
     })
   }

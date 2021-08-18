@@ -1,6 +1,6 @@
 .beer-card {
   width: 25%;
-  height:35%;
+  height:65%;
   background-color: #010626;
   text-align: center;
   margin: 1em;
@@ -15,4 +15,8 @@
   padding-top: .5em;
   background-color: #F2935C;
   font-weight: 600;
+}
+
+.card-img {
+  height: 45%;
 }
